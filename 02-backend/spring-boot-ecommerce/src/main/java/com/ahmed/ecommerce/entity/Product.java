@@ -1,7 +1,6 @@
 package com.ahmed.ecommerce.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -11,6 +10,9 @@ import java.util.Date;
 @Table(name = "Product")
 @Data
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
     private String sku;
     private  String name;
