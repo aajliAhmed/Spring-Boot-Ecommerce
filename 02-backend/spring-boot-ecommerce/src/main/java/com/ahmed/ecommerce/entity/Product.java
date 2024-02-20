@@ -14,14 +14,23 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @Column(name = "sku")
     private String sku;
+    @Column(name = "name")
     private  String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "unit_price")
     private BigDecimal unitPrice;
+    @Column(name = "image_URL")
     private String imageURL;
+    @Column(name = "active")
     private boolean active;
+    @Column(name = "units_in_stock")
     private int unitsInStock;
+    @Column(name = "date_created")
     private Date dateCreated;
+    @Column(name = "last_updated")
     private  Date lastUpdated;
 
 
