@@ -2,6 +2,8 @@ package com.ahmed.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -29,8 +31,10 @@ public class Product {
     @Column(name = "units_in_stock")
     private int unitsInStock;
     @Column(name = "date_created")
+    @CreationTimestamp
     private Date dateCreated;
     @Column(name = "last_updated")
+    @UpdateTimestamp
     private  Date lastUpdated;
 
 
