@@ -1,4 +1,8 @@
 package com.ahmed.ecommerce.dao;
 
-public interface ProductRepository {
+import com.ahmed.ecommerce.entity.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product,Long> {
+
 }
