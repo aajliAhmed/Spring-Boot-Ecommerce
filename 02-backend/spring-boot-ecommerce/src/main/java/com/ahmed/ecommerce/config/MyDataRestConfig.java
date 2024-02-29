@@ -1,6 +1,7 @@
 package com.ahmed.ecommerce.config;
 
 import com.ahmed.ecommerce.entity.Product;
+import com.ahmed.ecommerce.entity.ProductCategory;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
@@ -15,6 +16,11 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         config.getExposureConfiguration()
                 .forDomainType(Product.class)
+                .withItemExposure(((metdata, httpMethods) -> httpMethods.disable((theUnsupportedActions))))
+                .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)));
+
+        config.getExposureConfiguration()
+                .forDomainType(ProductCategory.class)
                 .withItemExposure(((metdata, httpMethods) -> httpMethods.disable((theUnsupportedActions))))
                 .withCollectionExposure(((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions)));
 
